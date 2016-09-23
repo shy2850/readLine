@@ -1,0 +1,17 @@
+#!/usr/bin/env node
+'use strict';
+var program = require('commander');
+var fs = require('fs');
+var run = require('./index.js');
+var base  = require('./package.json');
+
+program
+    .version(base.version);
+
+program
+    .command('*')
+    .action(function(filename) {
+        run(fs.readFileSync(filename).toString());
+    });
+
+program.parse(process.argv); //开始解析用户输入的命令
