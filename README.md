@@ -6,3 +6,6 @@
 
 
 > nodec test.js
+
+
+[img/demo.gif](img/demo.gif)
