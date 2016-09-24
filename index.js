@@ -15,7 +15,7 @@ module.exports = function (code) {
             lines.pop();
         }
         if (!lines.length) {
-            new Function(code.replace(/\bprint\(/g, 'console.log('))();
+            eval(code.replace(/\bprint\(/g, 'console.log('));
             process.exit(0);
         }
     });
